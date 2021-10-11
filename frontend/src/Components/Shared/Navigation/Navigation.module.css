@@ -1,0 +1,12 @@
+.container {
+  width: 1200px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.navbar {
+  width: 100%;
+  height: 60px;
+}
+.logo {
+  margin-top: 10px;
+}

@@ -22,28 +22,3 @@
   font-size: 22px;
   font-weight: bold;
 }
-
-.text {
-  font-size: 22px;
-  line-height: 1.6;
-  color: #c4c5c5;
-  margin-bottom: 30px;
-}
-.cardWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 8rem;
-}
-.signInWrapper {
-  margin-top: 20px;
-}
-.hasInvite {
-  color: #0077ff;
-}
-.signInText {
-  color: #0077ff;
-  font-weight: bold;
-  margin-left: 10px;
-  text-decoration: none;
-}
