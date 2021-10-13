@@ -1,3 +1,9 @@
+.cardWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
 .card {
   width: 500px;
   max-width: 90%;
@@ -28,12 +34,6 @@
   line-height: 1.6;
   color: #c4c5c5;
   margin-bottom: 30px;
-}
-.cardWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 8rem;
 }
 .signInWrapper {
   margin-top: 20px;

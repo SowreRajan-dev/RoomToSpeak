@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Styles from "./Card.module.css";
-export const Card = ({ title, icon, children }) => {
+export const Card = ({ title, icon, logo, children }) => {
   return (
     <div className={Styles.card}>
       <div className={Styles.headingWrapper}>
         <img
-          src={`/Images/${icon}.png`}
+          src={logo ? `/Images/${logo}.png` : `/Images/icons/${icon}.png`}
           className={Styles.cardLogo}
           alt="logo"
         />

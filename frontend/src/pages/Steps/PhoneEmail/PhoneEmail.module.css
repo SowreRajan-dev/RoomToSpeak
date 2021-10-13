@@ -1,0 +1,28 @@
+.cardWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 6rem;
+}
+.buttonWrap {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.ChangeButton {
+  margin-right: 420px;
+}
+.tabButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background: #262626;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #0077ff;
+}
