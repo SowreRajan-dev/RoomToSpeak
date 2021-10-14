@@ -7,6 +7,7 @@ import Styles from "./Phone.module.css";
 
 export const Phone = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
+  const onNext = () => {};
   return (
     <>
       <Card title="Enter your Phone Number" logo="Logo">
@@ -19,7 +20,7 @@ export const Phone = () => {
         </div>
         <div>
           <div className={Styles.actionButtonWrap}>
-            <Button onClick="" text="Continue" />
+            <Button onClick={onNext} text="Continue" />
           </div>
           <p className={Styles.bottomParagraph}>
             By entering your number,you’re agreeing to our Terms of Service and

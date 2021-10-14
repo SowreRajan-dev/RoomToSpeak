@@ -11,11 +11,11 @@ export const PhoneEmail = ({ onClick }) => {
   const [type, setType] = useState("phone");
   const Component = phoneEmailMap[type];
 
-  const handleNext = () => {};
+  // const handleNext = () => {};
   return (
     <>
       <div className={Styles.cardWrapper}>
-        <Component onClick={handleNext} />
+        <Component onClick={onClick} />
         <div className={Styles.buttonWrap}>
           <button
             className={`${Styles.ChangeButton} ${Styles.tabButton} ${

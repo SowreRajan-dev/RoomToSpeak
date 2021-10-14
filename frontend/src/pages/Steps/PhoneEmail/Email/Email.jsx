@@ -6,6 +6,7 @@ import Styles from "./Email.module.css";
 
 export const Email = () => {
   const [email, setEmail] = useState("");
+  const onNext = () => {};
 
   return (
     <>
@@ -14,7 +15,7 @@ export const Email = () => {
         <TextInput value={email} onChange={(e) => setEmail(e.target.value)} />
         <div>
           <div className={Styles.actionButtonWrap}>
-            <Button onClick="" text="Continue" />
+            <Button onClick={onNext} text="Continue" />
           </div>
           <p className={Styles.bottomParagraph}>
             By entering your number,you’re agreeing to our Terms of Service and
