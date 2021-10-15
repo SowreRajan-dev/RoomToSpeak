@@ -2,10 +2,23 @@ import React, { useState } from "react";
 import { Button } from "../../../Components/Shared/Button/Button";
 import { Card } from "../../../Components/Shared/Card/Card";
 import { TextInput } from "../../../Components/Shared/TextInput/TextInput";
+import { verifyOtp } from "../../../http";
 import Styles from "./Otp.module.css";
-export const Otp = ({ onClick }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { setAuth } from "../../../store/authSlice";
+export const Otp = () => {
   const [otp, setOtp] = useState("");
-  const handleNext = () => {};
+  const dispatch = useDispatch();
+  const { phone, hash } = useSelector((state) => state.auth.otp);
+  const handleNext = async () => {
+    try {
+      const { data } = await verifyOtp({ otp, phone, hash });
+      console.log(data);
+      dispatch(setAuth(data));
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <>
       <div className={Styles.cardWrapper}>
