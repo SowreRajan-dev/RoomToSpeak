@@ -6,3 +6,11 @@ body {
 .link {
   text-decoration: none;
 }
+
+.cardWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+  min-height: calc(100vh-70px);
+}

@@ -1,0 +1,29 @@
+.userImg {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  position: relative;
+  bottom: 35px;
+  right: 150px;
+  border: 6px solid #0077ff;
+  object-fit: cover;
+}
+.subHeading {
+  position: relative;
+  bottom: 150px;
+  color: #c4c5c5;
+}
+.avatarInput {
+  display: none;
+}
+.avatarLabel {
+  color: #0077ff;
+  margin: 10px 0;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  bottom: 50px;
+}
+.avatarLabel:hover {
+  text-decoration: underline;
+}

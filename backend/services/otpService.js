@@ -12,9 +12,9 @@ class OtpService {
     const otp = crypto.randomInt(1000, 9999);
     return otp;
   }
-  async sendBySms(phoneNumber, otp) {
+  async sendBySms(phone, otp) {
     return await twilio.messages.create({
-      to: phoneNumber,
+      to: phone,
       from: process.env.SMS_NUMBER,
       body: `Your RoomToSpeak OTP is ${otp}`,
     });

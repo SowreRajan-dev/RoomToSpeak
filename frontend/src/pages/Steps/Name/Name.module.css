@@ -1,0 +1,25 @@
+.actionButtonWrap {
+  margin-top: 40px;
+}
+.textField {
+  position: relative;
+  bottom: 20px;
+}
+.bottomParagraph {
+  color: #c4c5c5;
+  width: 70%;
+  text-align: center;
+  margin-top: 30px;
+}
+.cardWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+.cardLogo {
+  width: 50px;
+  position: relative;
+  bottom: 70px;
+  right: 160px;
+}

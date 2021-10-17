@@ -16,7 +16,7 @@ export const Home = () => {
           Yo speakers! This is your room to speak your words with a passion .Get
           a chance and speak your thoughts! Try to speak and take a break :)
         </p>
-        <Button onClick={startRegister} text="Get your username" />
+        <Button onClick={startRegister} text="Lets Go!" />
         <div className={Styles.signInWrapper}>
           <span className={Styles.hasInvite}>Have an invite text?</span>
           <Link to="/login">

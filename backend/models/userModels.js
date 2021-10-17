@@ -3,8 +3,10 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    phoneNumber: { type: String, required: true },
+    phone: { type: String, required: true },
     activated: { type: Boolean, required: false, default: false },
+    name: { type: String, required: false },
+    avatar: { type: String, required: false },
   },
   {
     timestamps: true,

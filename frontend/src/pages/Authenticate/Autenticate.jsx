@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Styles from "./Authenticate.module.css";
 
 import { Otp } from "../Steps/Otp/Otp";
 import { PhoneEmail } from "../Steps/PhoneEmail/PhoneEmail";
