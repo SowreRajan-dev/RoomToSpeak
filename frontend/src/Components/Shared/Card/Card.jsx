@@ -4,12 +4,15 @@ export const Card = ({ title, icon, logo, children }) => {
   return (
     <div className={Styles.card}>
       <div className={Styles.headingWrapper}>
-        <img
-          src={logo ? `/Images/${logo}.png` : `/Images/icons/${icon}.png`}
-          className={Styles.cardLogo}
-          alt="logo"
-        />
-        <h1 className={Styles.heading}>{title}</h1>
+        {icon ||
+          (logo && (
+            <img
+              src={logo ? `/Images/${logo}.png` : `/Images/icons/${icon}.png`}
+              className={Styles.cardLogo}
+              alt="logo"
+            />
+          ))}
+        {title && <h1 className={Styles.heading}>{title}</h1>}
       </div>
       {children}
     </div>

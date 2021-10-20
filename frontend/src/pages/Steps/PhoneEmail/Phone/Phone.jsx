@@ -11,6 +11,7 @@ export const Phone = ({ onClick }) => {
   const [phone, setPhone] = useState("");
   const dispatch = useDispatch();
   const submit = async () => {
+    if (!phone) return;
     const { data } = await sendOtp({ phone: phone });
     console.log(data);
     dispatch(setOtp({ phone: data.phone, hash: data.hash }));

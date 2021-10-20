@@ -13,14 +13,17 @@ import { Activate } from "./pages/Acttivate/Activate";
 import { Rooms } from "./pages/Rooms/Rooms";
 import { useSelector } from "react-redux";
 import { useLoadingWithRefresh } from "./hooks/useLoadingWithRefresh";
+import Loader from "./Components/Shared/Loader/Loader";
 
 function App() {
   //call refresh endpoint
+
   const { loading } = useLoadingWithRefresh();
+
   return (
     <div className="App">
       {loading ? (
-        "Loading..."
+        <Loader message="Loading, please wait..." />
       ) : (
         <Router>
           <Navigation />

@@ -6,19 +6,27 @@ import { useDispatch, useSelector } from "react-redux";
 import { setAvatar } from "../../../store/activateSlice";
 import { activate } from "../../../http";
 import { setAuth } from "../../../store/authSlice";
+import Loader from "../../../Components/Shared/Loader/Loader";
 export const Avatar = ({ onClick }) => {
   const { name, avatar } = useSelector((state) => state.activate);
   const [image, setImage] = useState("/Images/userImg.png");
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   async function submitHandler() {
+    if (!name || !avatar) return;
+    setLoading(true);
     try {
       const { data } = await activate({ name, avatar });
       if (data.auth) {
         dispatch(setAuth(data));
       }
       console.log(data);
+      setLoading(false);
     } catch (err) {
       console.log(err);
+      setLoading(false);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -33,6 +41,7 @@ export const Avatar = ({ onClick }) => {
       dispatch(setAvatar(reader.result));
     };
   }
+  if (loading) return <Loader message="Activation in progress..." />;
   return (
     <>
       <Card title={`Hey ${name ? name + "!" : "There!"}`} logo="Logo">
