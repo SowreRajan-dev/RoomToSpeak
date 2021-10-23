@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import AddRoomModel from "../../Components/AddRoomModel/AddRoomModel";
 import RoomCard from "../../Components/RoomCard/RoomCard";
 import Styles from "./Rooms.module.css";
 export const Rooms = () => {
+  const [showModel, setShowModel] = useState(false);
   const rooms = [
     {
       id: 1,
@@ -38,6 +40,12 @@ export const Rooms = () => {
       totalPeople: 80,
     },
   ];
+  function openModel() {
+    setShowModel(true);
+  }
+  function onClose() {
+    setShowModel(false);
+  }
   return (
     <>
       <div className="container">
@@ -49,7 +57,7 @@ export const Rooms = () => {
               <input type="text" className={Styles.searchInput} />
             </div>
           </div>
-          <div className={Styles.headerRight}>
+          <div onClick={openModel} className={Styles.headerRight}>
             <button className={Styles.startRoomBtn}>
               <img src="/images/Icons/speakIcon.png" alt="room" />
               <span>Start a room</span>
@@ -69,6 +77,7 @@ export const Rooms = () => {
           ))}
         </div>
       </div>
+      {showModel && <AddRoomModel onClose={onClose} />}
     </>
   );
 };

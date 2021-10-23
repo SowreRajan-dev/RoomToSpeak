@@ -12,7 +12,7 @@ const RoomCard = ({ room }) => {
         </div>
         <div className={Styles.names}>
           {room.speakers.map((speaker) => (
-            <div className={Styles.nameWrapper}>
+            <div className={Styles.nameWrapper} key={speaker.id}>
               <span>{speaker.name}</span>
               <img src="\Images\Icons\messageImg.png" alt="" />
             </div>
