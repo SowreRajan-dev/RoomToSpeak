@@ -7,7 +7,7 @@ import { setAuth } from "../../../store/authSlice";
 
 export const Navigation = () => {
   const dispatch = useDispatch();
-  const { isAuth } = useSelector((state) => state.auth);
+  const { isAuth, user } = useSelector((state) => state.auth);
 
   async function logOutUser() {
     try {
@@ -22,7 +22,25 @@ export const Navigation = () => {
       <Link to="/">
         <img src="/Images/Logo.png" className={Styles.logo} alt="logo" />
       </Link>
-      {isAuth && <button onClick={logOutUser}>Logout</button>}
+      <div className={Styles.navRight}>
+        <h3>{user.name}</h3>
+        <Link to="/">
+          <img
+            src={user.avatar}
+            className={Styles.userImg}
+            width="40"
+            height="40"
+            alt="userAvi"
+          />
+        </Link>
+        <button className={Styles.logOut} onClick={logOutUser}>
+          <img
+            src="/Images/icons/logoutIcon.png"
+            className={Styles.logOutIcon}
+            alt="logoutIcon"
+          />
+        </button>
+      </div>
     </nav>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Styles from "./Avatar.module.css";
 import { Button } from "../../../Components/Shared/Button/Button";
 import { Card } from "../../../Components/Shared/Card/Card";
@@ -10,6 +10,7 @@ import Loader from "../../../Components/Shared/Loader/Loader";
 export const Avatar = ({ onClick }) => {
   const { name, avatar } = useSelector((state) => state.activate);
   const [image, setImage] = useState("/Images/userImg.png");
+  const [unMounted, setUnMounted] = useState(false);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   async function submitHandler() {
@@ -18,7 +19,10 @@ export const Avatar = ({ onClick }) => {
     try {
       const { data } = await activate({ name, avatar });
       if (data.auth) {
-        dispatch(setAuth(data));
+        // check if component unmount
+        if (!unMounted) {
+          dispatch(setAuth(data));
+        }
       }
       console.log(data);
       setLoading(false);
@@ -29,7 +33,11 @@ export const Avatar = ({ onClick }) => {
       setLoading(false);
     }
   }
-
+  useEffect(() => {
+    return () => {
+      setUnMounted(true);
+    };
+  }, [dispatch]);
   function captureImg(e) {
     e.preventDefault();
     const file = e.target.files[0];
