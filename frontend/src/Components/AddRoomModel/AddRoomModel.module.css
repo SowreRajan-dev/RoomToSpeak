@@ -31,7 +31,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #262626;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
@@ -89,4 +88,8 @@
   top: 8px;
   cursor: pointer;
   background: none;
+}
+
+.typeBox.active {
+  background-color: #262626;
 }

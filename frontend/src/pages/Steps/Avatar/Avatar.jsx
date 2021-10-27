@@ -13,6 +13,7 @@ export const Avatar = ({ onClick }) => {
   const [unMounted, setUnMounted] = useState(false);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+
   async function submitHandler() {
     if (!name || !avatar) return;
     setLoading(true);

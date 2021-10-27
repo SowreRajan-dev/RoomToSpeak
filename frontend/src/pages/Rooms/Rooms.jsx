@@ -1,45 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddRoomModel from "../../Components/AddRoomModel/AddRoomModel";
 import RoomCard from "../../Components/RoomCard/RoomCard";
+import { getAllRooms } from "../../http";
 import Styles from "./Rooms.module.css";
 export const Rooms = () => {
   const [showModel, setShowModel] = useState(false);
-  const rooms = [
-    {
-      id: 1,
-      topic: "Which framework best for frontend?",
-      speakers: [
-        {
-          id: 1,
-          name: "ajay",
-          avatar: "/images/userImg2.png",
-        },
-        {
-          id: 2,
-          name: "suniley",
-          avatar: "/images/userImg.png",
-        },
-      ],
-      totalPeople: 40,
-    },
-    {
-      id: 2,
-      topic: "Is India safer?",
-      speakers: [
-        {
-          id: 1,
-          name: "ajay",
-          avatar: "/images/userImg.png",
-        },
-        {
-          id: 2,
-          name: "suniley",
-          avatar: "/images/userImg2.png",
-        },
-      ],
-      totalPeople: 80,
-    },
-  ];
+  const [rooms, setRooms] = useState([]);
+
+  useEffect(() => {
+    const fetchRooms = async () => {
+      const { data } = await getAllRooms();
+      setRooms(data);
+    };
+    fetchRooms();
+  }, []);
+
   function openModel() {
     setShowModel(true);
   }
@@ -67,11 +42,6 @@ export const Rooms = () => {
         <div className={Styles.roomList}>
           {rooms.map((room) => (
             <>
-              <RoomCard room={room} key={room.id} />
-              <RoomCard room={room} key={room.id} />
-              <RoomCard room={room} key={room.id} />
-              <RoomCard room={room} key={room.id} />
-              <RoomCard room={room} key={room.id} />
               <RoomCard room={room} key={room.id} />
             </>
           ))}
